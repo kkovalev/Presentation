@@ -9,19 +9,25 @@ const sequence = require('run-sequence');
 const zip = require('gulp-zip');
 const pages = require('gulp-gh-pages');
 
+const srcFiles = [
+    '**',
+    '!docs{,/**}',
+    '!node_modules{,/**}',
+    '!prepared{,/**}',
+    '!CONTRIBUTING.md',
+    '!LICENSE.md',
+    '!README.md',
+    '!gulpfile.js',
+    '!package.json'
+]
+
+gulp.task('watch',function(){
+	gulp.watch(srcFiles, ["prepare"]);
+});
+
 gulp.task('prepare', () => {
 
-	const shower = gulp.src([
-			'**',
-			'!docs{,/**}',
-			'!node_modules{,/**}',
-			'!prepared{,/**}',
-			'!CONTRIBUTING.md',
-			'!LICENSE.md',
-			'!README.md',
-			'!gulpfile.js',
-			'!package.json'
-		])
+	const shower = gulp.src(srcFiles)
 		.pipe(replace(
 			/(<link rel="stylesheet" href=")(node_modules\/shower-)([^\/]*)\/(.*\.css">)/g,
 			'$1shower/themes/$3/$4', { skipBinary: true }
@@ -100,4 +106,4 @@ gulp.task('clean', () => {
 	return del('prepared/**');
 });
 
-gulp.task('default', ['prepare']);
+gulp.task('default', ['prepare', 'watch']);
