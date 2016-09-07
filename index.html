@@ -6,6 +6,15 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <style>
+        .slide pre code::before {
+            position: absolute;
+            margin-left: -2em;
+            color: #bdbdbd;
+            counter-increment: code;
+            content: counter(code,decimal-leading-zero) ".";
+        }
+    </style>
 </head>
 <body class="shower list">
 	<header class="caption">
@@ -78,23 +87,55 @@
             <li>Табы</li>
             <li>Файловые деревья</li>
 			<li>Фильтры</li>
-            <p>Примеры?</p>
+            <p>
+				<a href="http://devconf.ru/data/devconf2016/ppt/193.ppt" target="_blank">
+					http://devconf.ru/data/devconf2016/ppt/193.ppt
+				</a>
+			</p>
 		</ol>
 	</section>
-	<section class="slide">
+	<section class="slide" id="needMore">
         <h2>Мало возможностей чистого CSS</h2>
-        <ul>
+        <ul class="next">
             <li>Фильтр по слектам</li>
-            <li>Поиск по строке</li>
-            <li>...</li>
         </ul>
+        <pre class="next">
+            <code>:checked ~ .item{ ... }</code>
+        </pre>
+        <pre class="next">
+            <code>select <span class="wat"></span> .item{ ... }</code>
+        </pre>
+        <ul class="next">
+            <li>Поиск по строке</li>
+        </ul>
+        <pre class="next">
+            <code>input[value="text"] ~ .item{ ... }</code> <span class="next sad">):</span>
+        </pre>
+        <style>
+            #needMore .wat:before{
+                content: '?';
+                transform: scale(2)rotate(10deg);
+                display: inline-block;
+                background: #4b86c2;
+                line-height: 1em;
+                border-radius: 100%;
+                width: 1em;
+                text-align: center;
+                color: #fff;
+            }
+            #needMore .sad{
+                color: #cc0000;
+                transform: scale(3)rotate(-50deg)translate(5px);
+                display: inline-block;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <h2>JS в помощь</h2>
         <pre class="next">
             <code>var css = `.<mark>${className}</mark>{ display: none }`;</code>
             <code>&lt;style&gt;{css}&lt;/style&gt;</code>
         </pre>
-    </section>
-    <section class="slide">
-        <h2>Пример</h2>
     </section>
 
 
