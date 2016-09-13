@@ -54,46 +54,103 @@
 					}
 		</style>
 	</section>
-    <section class="slide" id="who">
-        <h2>Какой язык родной?</h2>
-        <img src="pictures/frontend.jpg" alt="">
-        <style>
-            #who img{
-                height: 440px;
-                margin: 0 auto;
+
+    <section class="slide" id="tooltips">
+		<h2>Тултипы</h2>
+        <button data-tooltip="Подсказка" class="next">Кнопка</button>
+        <pre class="next">
+            <code>[data-tooltip]{</code>
+            <code>   position: relative;</code>
+            <code>}</code>
+            <code>[data-tooltip]:before{</code>
+            <code>    content: attr(data-tooltip);</code>
+            <code>    position: absolute;</code>
+            <code>    top: -70px;</code>
+            <code>    transform: scale(0);</code>
+            <code>}</code>
+            <code>[data-tooltip]:hover:before{</code>
+            <code>    transform: scale(1);</code>
+            <code>}</code>
+        </pre>
+        <button data-tooltip="Подсказка" class="next cool">Кнопка</button>
+
+        <style title="Тултип">
+            [data-tooltip]{
+                position: relative;
+            }
+            [data-tooltip]:before{
+                content: attr(data-tooltip);
+                position: absolute;
+                top: -70px;
+                transform: scale(0);
+            }
+            [data-tooltip]:hover:before{
+                transform: scale(1);
+            }
+
+            /* Красота */
+            .cool[data-tooltip]:before{
+                content: attr(data-tooltip);
+                position: absolute;
+                font-size: 20px;
+                background: #FCFFAA;
+                top: 0;
+                left: 50%;
+                padding: 5px;
+                border-radius: 4px;
+                border: 1px solid;
+                color: #000;
+                transition: transform .3s, opacity .3s;
+                transform: translate(-50%,calc(-100% - 10px))scale(0);
+                line-height: 1em;
+                pointer-events: none;
+                transform-origin: 50% calc(100% + 10px);
+                opacity: .6;
+            }
+            .cool[data-tooltip]:hover:before{
+                transform: translate(-50%,calc(-100% - 10px))scale(1);
+            }
+            .cool[data-tooltip]:after{
+                content: '';
+                border: 10px solid transparent;
+                height: 0;
+                width: 0;
                 display: block;
+                position: absolute;
+                top: 0;
+                border-top-color: #000;
+                left: 50%;
+                transform: translate(-50%, -11px)scale(0);
+                transition: transform .3s;
+                opacity: .6;
+            }
+            .cool[data-tooltip]:hover:after{
+                transform: translate(-50%, -11px)scale(1);
             }
         </style>
-    </section>
-    <section class="slide" id="htmlcss">
-        <h2>Какой язык родной?</h2>
-        <img src="pictures/HTML5-CSS3.png" alt="">
+
         <style>
-            #htmlcss img{
-                height: 440px;
-                margin: 0 auto;
-                display: block;
+            #tooltips button{
+                font-size: 70px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 50%;
+            }
+            #tooltips button:before{
+                font-size: 50px;
+            }
+            #tooltips pre{
+                background: #fff;
+                position: absolute;
+                width: 100%;
+            }
+            #tooltips button.cool{
+                transform: translate(50%);
             }
         </style>
-    </section>
-    <section class="slide">
-		<h2>Где можно использовать?</h2>
-		<ol>
-			<li>Тултипы</li>
-			<li>Выпадающие меню</li>
-			<li>Валидация форм</li>
-			<li>Модальные окна</li>
-            <li>Слайдеры</li>
-            <li>Табы</li>
-            <li>Файловые деревья</li>
-			<li>Фильтры</li>
-            <p>
-				<a href="http://devconf.ru/data/devconf2016/ppt/193.ppt" target="_blank">
-					http://devconf.ru/data/devconf2016/ppt/193.ppt
-				</a>
-			</p>
-		</ol>
 	</section>
+
 	<section class="slide" id="needMore">
         <h2>Мало возможностей чистого CSS</h2>
         <ul class="next">
