@@ -189,6 +189,21 @@
             <code>}</code>
         </pre>
 
+        <img src="pictures/tabs-html2.png" class="next tabshash">
+
+        <pre class="next">
+            <code>.tabcontent > *:not(:first-child){</code>
+            <code>    display: none;</code>
+            <code>}</code>
+            <code>#tabs :target{</code>
+            <code>    display: block;</code>
+            <code>}</code>
+            <code>#tabs <mark>:target</mark>:not(:first-child){</code>
+            <code>    z-index: 2;</code>
+            <code>    position: relative;</code>
+            <code>}</code>
+        </pre>
+
         <style>
             /* Табы */
             input,
@@ -215,6 +230,7 @@
                 top: 20px;
                 left: 0;
                 width: 100%;
+                z-index: 1;
             }
             #tabsSlide pre{
                 background: #fff;
@@ -226,6 +242,11 @@
                 width: 100%;
                 left: 0;
                 padding-left: 60px;
+                z-index: 1;
+            }
+            .tabshash{
+                height: 100%;
+                width: auto;
             }
         </style>
     </section>
