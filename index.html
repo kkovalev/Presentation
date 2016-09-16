@@ -18,6 +18,26 @@
             width: 100%;
             height: 440px;
         }
+        .html{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            background-size: 80%;
+        }
+        .slide pre{
+            background: #fff;
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            padding-left: 60px;
+            justify-content: center;
+        }
     </style>
 </head>
 <body class="shower list">
@@ -122,20 +142,20 @@
         <code>}</code>
     </pre>
 
-    <div class="html2 next"></div>
+    <div class="html2 html next"></div>
 
     <pre class="next">
-            <code>.tabcontent > *:not(:first-child){</code>
-            <code>    display: none;</code>
-            <code>}</code>
-            <code>#tabs :target{</code>
-            <code>    display: block;</code>
-            <code>}</code>
-            <code>#tabs <mark>:target</mark>:not(:first-child){</code>
-            <code>    z-index: 2;</code>
-            <code>    position: relative;</code>
-            <code>}</code>
-        </pre>
+        <code>.tabcontent > *:not(:first-child){</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>#tabs :target{</code>
+        <code>    display: block;</code>
+        <code>}</code>
+        <code>#tabs <mark>:target</mark>:not(:first-child){</code>
+        <code>    z-index: 2;</code>
+        <code>    position: relative;</code>
+        <code>}</code>
+    </pre>
 
 
     <style>
@@ -164,15 +184,46 @@
         }
         #tabsSlide .html2{
             background: url(pictures/tabs-html2.png) no-repeat center #fff;
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            left: 0;
-            background-size: 80%;
         }
     </style>
 </section>
+
+<section class="slide" id="modal">
+    <h2>Модальные окна</h2>
+    <iframe src="demo/modal" frameborder="0" class="next"></iframe>
+
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>#modal{</code>
+        <code>    z-index: -1;</code>
+        <code>}</code>
+        <code>#modal<mark>:target</mark>{</code>
+        <code>    z-index: 10;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #modal .html{
+            background: url(pictures/modal-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <section class="slide">
