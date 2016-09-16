@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <title>Filter</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div id="filter">
+        <input type="checkbox" id="new" checked>
+        <label for="new">Новые</label>
+        <input type="checkbox" id="sale" checked>
+        <label for="sale">Акционные</label>
+        <input type="checkbox" id="bestseller" checked>
+        <label for="bestseller">Популярные</label>
+
+        <div class="items">
+            <div class="item new">
+                <img src="//mdata.yandex.net/i?path=b0910230238_img_id6738100464582526458.jpg&size=5">
+                <div>
+                    <div class="title">Apple iPhone 5S 16Gb</div>
+                    <div class="price">20 190 руб.</div>
+                </div>
+            </div>
+            <div class="item sale">
+                <img src="//mdata.yandex.net/i?path=b0910150147_img_id5771268031838675289.jpeg&size=5">
+                <div>
+                    <div class="title">Apple iPhone 6S 64Gb</div>
+                    <div class="price">46 940 руб.</div>
+                </div>
+            </div>
+            <div class="item bestseller">
+                <img src="//mdata.yandex.net/i?path=b0910230238_img_id6738100464582526458.jpg&size=5">
+                <div>
+                    <div class="title">Apple iPhone 5S 16Gb</div>
+                    <div class="price">20 190 руб.</div>
+                </div>
+            </div>
+            <div class="item bestseller">
+                <img src="//mdata.yandex.net/i?path=b0222114526_img_id6563061428231820610.jpeg&size=5">
+                <div>
+                    <div class="title">Samsung Galaxy S7 32Gb</div>
+                    <div class="price">38 000 руб.</div>
+                </div>
+            </div>
+            <div class="item sale">
+                <img src="//mdata.yandex.net/i?path=b0222094034_img_id9187668351168946175.jpeg&size=5">
+                <div>
+                    <div class="title">Samsung Galaxy S7 Edge 32Gb</div>
+                    <div class="price">45 740 руб.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<style>
+    body {
+        align-items: flex-start;
+    }
+    #filter .item{
+        display: none;
+    }
+    #new:checked ~ .items > .new{
+        display: flex;
+    }
+    #sale:checked ~ .items > .sale{
+        display: flex;
+    }
+    #bestseller:checked ~ .items > .bestseller{
+        display: flex;
+    }
+    #filter .items:before{
+        content: 'Ничего нету ):';
+        text-align: center;
+        background: #dadada;
+        line-height: 2em;
+        border-radius: 2px;
+    }
+    #filter :checked ~ .items:before{
+        content: none;
+    }
+</style>
+</body>
+</html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
     <style>
         .slide pre code::before {
             position: absolute;
@@ -14,184 +14,117 @@
             counter-increment: code;
             content: counter(code,decimal-leading-zero) ".";
         }
+        iframe{
+            width: 100%;
+            height: 440px;
+        }
     </style>
 </head>
 <body class="shower list">
-	<header class="caption">
-		<h1>Давайте общаться с браузером на родном(для него) языке</h1>
-		<p>Ковалев Кирилл</p>
-	</header>
-	<section class="slide" id="cover">
-		<h2>Общайтесь с браузером на родном языке</h2>
-		<p><a href="https://habrahabr.ru/users/seokirill/">Ковалев Кирилл</a></p>
-		<img src="pictures/browsers.png" alt="" class="cover">
-		<style>
-			#cover{
-                background: #000;
-			}
-            #cover .cover{
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                -webkit-transform: translate(-50%,-50%);
-                transform: translate(-50%);
-            }
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
-	</section>
+<header class="caption">
+    <h1>Давайте общаться с браузером на родном(для него) языке</h1>
+    <p>Ковалев Кирилл</p>
+</header>
+<section class="slide" id="cover">
+    <h2>CSS POWER</h2>
+    <p><a href="https://habrahabr.ru/users/seokirill/">Ковалев Кирилл</a></p>
+    <img src="pictures/browsers.png" alt="" class="cover">
+    <style>
+        #cover{
+            background: #000;
+        }
+        #cover .cover{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%);
+        }
+        #cover h2 {
+            margin:30px 0 0;
+            color:#FFF;
+            text-align:center;
+            font-size:70px;
+        }
+        #cover p {
+            margin:10px 0 0;
+            text-align:center;
+            color:#FFF;
+            font-style:italic;
+            font-size:20px;
+        }
+        #cover p a {
+            color:#FFF;
+        }
+    </style>
+</section>
 
-    <section class="slide" id="tooltips">
-		<h2>Тултипы</h2>
-        <button data-tooltip="Подсказка" class="next">Кнопка</button>
-        <pre class="next">
-            <code>[data-tooltip]{</code>
-            <code>   position: relative;</code>
-            <code>}</code>
-            <code>[data-tooltip]:before{</code>
-            <code>    content: attr(data-tooltip);</code>
-            <code>    position: absolute;</code>
-            <code>    top: -70px;</code>
-            <code>    transform: scale(0);</code>
-            <code>}</code>
-            <code>[data-tooltip]:hover:before{</code>
-            <code>    transform: scale(1);</code>
-            <code>}</code>
-        </pre>
-        <button data-tooltip="Подсказка" class="next cool">Кнопка</button>
+<section class="slide" id="tooltips">
+    <h2>Тултипы</h2>
+    <iframe src="demo/tooltip" frameborder="0" class="next"></iframe>
 
-        <style title="Тултип">
-            [data-tooltip]{
-                position: relative;
-            }
-            [data-tooltip]:before{
-                content: attr(data-tooltip);
-                position: absolute;
-                top: -70px;
-                transform: scale(0);
-            }
-            [data-tooltip]:hover:before{
-                transform: scale(1);
-            }
+    <pre class="next">
+        <code>&lt;button data-tooltip="Текст с подсказкой"&gt;Кнопка&lt;/button&gt;</code>
+    </pre>
 
-            /* Красота */
-            .cool[data-tooltip]:before{
-                content: attr(data-tooltip);
-                position: absolute;
-                font-size: 20px;
-                background: #FCFFAA;
-                top: 0;
-                left: 50%;
-                padding: 5px;
-                border-radius: 4px;
-                border: 1px solid;
-                color: #000;
-                transition: transform .3s, opacity .3s;
-                transform: translate(-50%,calc(-100% - 10px))scale(0);
-                line-height: 1em;
-                pointer-events: none;
-                transform-origin: 50% calc(100% + 10px);
-                opacity: .6;
-            }
-            .cool[data-tooltip]:hover:before{
-                transform: translate(-50%,calc(-100% - 10px))scale(1);
-            }
-            .cool[data-tooltip]:after{
-                content: '';
-                border: 10px solid transparent;
-                height: 0;
-                width: 0;
-                display: block;
-                position: absolute;
-                top: 0;
-                border-top-color: #000;
-                left: 50%;
-                transform: translate(-50%, -11px)scale(0);
-                transition: transform .3s;
-                opacity: .6;
-            }
-            .cool[data-tooltip]:hover:after{
-                transform: translate(-50%, -11px)scale(1);
-            }
-        </style>
+    <pre class="next">
+        <code>[data-tooltip]{</code>
+        <code>   position: relative;</code>
+        <code>}</code>
+        <code>[data-tooltip]:before{</code>
+        <code>    content: attr(data-tooltip);</code>
+        <code>    position: absolute;</code>
+        <code>    top: -70px;</code>
+        <code>    transform: scale(0);</code>
+        <code>}</code>
+        <code>[data-tooltip]:hover:before{</code>
+        <code>    transform: scale(1);</code>
+        <code>}</code>
+    </pre>
 
-        <style>
-            #tooltips button{
-                font-size: 70px;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top: 50%;
-            }
-            #tooltips button:before{
-                font-size: 50px;
-            }
-            #tooltips pre{
-                background: #fff;
-                position: absolute;
-                width: 100%;
-            }
-            #tooltips button.cool{
-                transform: translate(50%);
-            }
-        </style>
-	</section>
+    <style>
+        #tooltips pre{
+            background: #fff;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            left: 0;
+            flex-wrap: wrap;
+        }
+        #tooltips code{
+            margin-left: 0;
+        }
+    </style>
+</section>
 
-    <section class="slide" id="tabsSlide">
-        <h2>Табы</h2>
-        <div id="tabs" class="next">
-            <input type="radio" name="tabs" id="lorem" checked>
-            <input type="radio" name="tabs" id="lorem500">
+<section class="slide" id="tabsSlide">
+    <h2>Табы</h2>
 
-            <div class="tabs">
-                <label class="tab" for="lorem">Закладка 1</label>
-                <label class="tab" for="lorem500">Закладка 2</label>
-            </div>
+    <iframe src="demo/tabs" frameborder="0" class="next"></iframe>
 
-            <div class="tabcontent">
-                <div class="lorem">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae consequuntur cumque dicta enim esse est excepturi exercitationem facilis labore mollitia nam, placeat possimus provident recusandae rem repellendus tempora voluptatum!
-                </div>
-                <div class="lorem500">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti nam nesciunt sed? Corporis eaque laboriosam maiores sequi sint! Accusantium amet consectetur hic molestiae officia? Accusantium aliquid dolorem laudantium molestiae possimus, quod recusandae vitae voluptatibus. Aspernatur autem consequuntur dicta distinctio enim est eum ex facilis id mollitia, nemo neque nesciunt nihil nobis quaerat qui quis, repudiandae sed? Corporis deserunt eligendi excepturi fugit labore nesciunt nisi, numquam pariatur quam quos rerum sit unde veritatis! Alias at blanditiis culpa cum delectus esse eum ex fugit impedit ipsum iure maiores minima modi nihil odio pariatur perferendis placeat quaerat quasi quisquam quod rerum sunt temporibus veritatis vitae voluptatem, voluptatibus. Adipisci consequatur deserunt ducimus est ex harum in magnam odio porro quasi reprehenderit, sint. Accusantium architecto at consequuntur cum deleniti distinctio earum eius eligendi ex labore modi mollitia nam nihil numquam odio, quam quo reiciendis sequi sit suscipit, tempore temporibus vitae. Ad, architecto fugiat inventore laudantium natus nihil placeat quidem repudiandae sequi ullam? Adipisci animi cumque dolor eius esse incidunt itaque maiores minima, minus mollitia officiis porro praesentium quam quas sequi soluta unde. At, cupiditate dicta doloribus nesciunt nihil officia optio repellat? Ad aspernatur autem id illo maiores? Aperiam commodi distinctio ex in, iusto minus neque non numquam tenetur ut! Blanditiis deleniti eveniet, excepturi magni optio pariatur perferendis veniam. Culpa eaque eligendi est, ex facere fuga fugiat, impedit optio reiciendis repellat ullam voluptas! Blanditiis doloribus, enim hic, impedit iure magnam natus nisi nostrum numquam obcaecati rerum velit voluptatem voluptates! A animi atque debitis dicta ea enim laboriosam laborum maiores molestias non obcaecati officia praesentium provident quas similique, sit ullam, voluptate voluptatibus! Culpa cumque debitis eaque explicabo facere illo in ipsum molestias, perferendis? Aliquam eaque esse, nam quasi quis reprehenderit tempore! Amet eos incidunt itaque, nisi quas repellendus temporibus totam! Aliquam amet commodi dolor dolore dolorem ea, eligendi esse illum, impedit ipsum iusto magnam minus natus necessitatibus neque officiis omnis provident quae quas quos suscipit totam velit voluptatum! Ad consequuntur dolorem ex, harum iste minus molestias sit voluptas. Aspernatur corporis et harum laboriosam laborum molestias nemo porro quo quod ullam! Aperiam ducimus harum maiores minima nemo, numquam quisquam suscipit. Architecto aut consequatur culpa, deserunt, dicta dolores eius excepturi expedita facere harum in incidunt iure neque nostrum quo ullam vero? Amet assumenda corporis culpa enim eum facere nesciunt, praesentium! Ab adipisci dolor eaque et laboriosam libero molestiae nemo neque nobis quae quia, quis sed sunt suscipit tenetur, veniam, veritatis. Aperiam aspernatur autem, cumque dicta dolore doloribus fugit harum impedit in ipsam, iste maiores minima natus neque non nulla obcaecati quia quisquam quos repudiandae saepe sit soluta, sunt suscipit temporibus tenetur voluptas voluptate. Asperiores blanditiis eius, nam quia ut voluptatibus. Facilis laudantium, qui! Alias aliquid aspernatur atque dolor fugit libero, modi neque officiis perspiciatis quidem. Architecto beatae distinctio modi temporibus voluptatum? Ab aliquid atque corporis, culpa deserunt doloremque esse est exercitationem fuga fugiat fugit illo iusto labore libero maxime mollitia nisi officia possimus praesentium saepe tempore velit voluptatum. Cum dicta dolore magnam maxime nihil ullam unde vitae. Ipsam, quia!
-                </div>
-            </div>
-        </div>
+    <img src="pictures/tabs-html.png" class="next">
 
-        <img src="pictures/tabs-html.png" class="next">
+    <pre class="next">
+        <code>input,</code>
+        <code>#tabs .tabcontent > *{</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>#lorem:checked ~ .tabcontent .lorem,</code>
+        <code>#lorem500:checked ~ .tabcontent .lorem500{</code>
+        <code>    display: block;</code>
+        <code>}</code>
+        <code>#lorem500:checked ~ .tabs [for=lorem500],</code>
+        <code>#lorem:checked ~ .tabs [for=lorem]{</code>
+        <code>    background: #dadada;</code>
+        <code>}</code>
+    </pre>
 
-        <pre class="next">
-            <code>input,</code>
-            <code>#tabs .tabcontent > *{</code>
-            <code>    display: none;</code>
-            <code>}</code>
-            <code>#lorem:checked ~ .tabcontent .lorem,</code>
-            <code>#lorem500:checked ~ .tabcontent .lorem500{</code>
-            <code>    display: block;</code>
-            <code>}</code>
-            <code>#lorem500:checked ~ .tabs [for=lorem500],</code>
-            <code>#lorem:checked ~ .tabs [for=lorem]{</code>
-            <code>    background: #dadada;</code>
-            <code>}</code>
-        </pre>
+    <div class="html2 next"></div>
 
-        <img src="pictures/tabs-html2.png" class="next tabshash">
-
-        <pre class="next">
+    <pre class="next">
             <code>.tabcontent > *:not(:first-child){</code>
             <code>    display: none;</code>
             <code>}</code>
@@ -204,52 +137,47 @@
             <code>}</code>
         </pre>
 
-        <style>
-            /* Табы */
-            input,
-            #tabs .tabcontent > *{
-                display: none;
-            }
-            #lorem:checked ~ .tabcontent .lorem,
-            #lorem500:checked ~ .tabcontent .lorem500{
-                display: block;
-            }
-            #lorem500:checked ~ .tabs [for=lorem500],
-            #lorem:checked ~ .tabs [for=lorem]{
-                background: #dadada;
-            }
-        </style>
-        <style>
-            #tabs label{
-                border: 1px solid #777;
-                padding: 5px;
-                border-bottom: 0;
-            }
-            #tabsSlide img{
-                position: absolute;
-                top: 20px;
-                left: 0;
-                width: 100%;
-                z-index: 1;
-            }
-            #tabsSlide pre{
-                background: #fff;
-                position: absolute;
-                top: 0;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                width: 100%;
-                left: 0;
-                padding-left: 60px;
-                z-index: 1;
-            }
-            .tabshash{
-                height: 100%;
-                width: auto;
-            }
-        </style>
-    </section>
+
+    <style>
+        #tabsSlide img{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        #tabsSlide pre{
+            background: #fff;
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            padding-left: 60px;
+        }
+        #tabsSlide iframe{
+            width: 50%;
+            transform: scale(2);
+            transform-origin: 0 0;
+            height: 200px;
+        }
+        #tabsSlide .html2{
+            background: url(pictures/tabs-html2.png) no-repeat center #fff;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            background-size: 80%;
+        }
+    </style>
+</section>
+
+
+<section class="slide">
+    <iframe src="../demo/filter/index.html" frameborder="0"></iframe>
+</section>
 
 
 
@@ -257,52 +185,49 @@
 
 
 
-
-
-
-	<section class="slide" id="needMore">
-        <h2>Мало возможностей чистого CSS</h2>
-        <ul class="next">
-            <li>Фильтр по слектам</li>
-        </ul>
-        <pre class="next">
+<section class="slide" id="needMore">
+    <h2>Мало возможностей чистого CSS</h2>
+    <ul class="next">
+        <li>Фильтр по слектам</li>
+    </ul>
+    <pre class="next">
             <code>:checked ~ .item{ ... }</code>
         </pre>
-        <pre class="next">
+    <pre class="next">
             <code>select <span class="wat"></span> .item{ ... }</code>
         </pre>
-        <ul class="next">
-            <li>Поиск по строке</li>
-        </ul>
-        <pre class="next">
+    <ul class="next">
+        <li>Поиск по строке</li>
+    </ul>
+    <pre class="next">
             <code>input[value="text"] ~ .item{ ... }</code> <span class="next sad">):</span>
         </pre>
-        <style>
-            #needMore .wat:before{
-                content: '?';
-                transform: scale(2)rotate(10deg);
-                display: inline-block;
-                background: #4b86c2;
-                line-height: 1em;
-                border-radius: 100%;
-                width: 1em;
-                text-align: center;
-                color: #fff;
-            }
-            #needMore .sad{
-                color: #cc0000;
-                transform: scale(3)rotate(-50deg)translate(5px);
-                display: inline-block;
-            }
-        </style>
-    </section>
-    <section class="slide">
-        <h2>JS в помощь</h2>
-        <pre class="next">
+    <style>
+        #needMore .wat:before{
+            content: '?';
+            transform: scale(2)rotate(10deg);
+            display: inline-block;
+            background: #4b86c2;
+            line-height: 1em;
+            border-radius: 100%;
+            width: 1em;
+            text-align: center;
+            color: #fff;
+        }
+        #needMore .sad{
+            color: #cc0000;
+            transform: scale(3)rotate(-50deg)translate(5px);
+            display: inline-block;
+        }
+    </style>
+</section>
+<section class="slide">
+    <h2>JS в помощь</h2>
+    <pre class="next">
             <code>var css = `.<mark>${className}</mark>{ display: none }`;</code>
             <code>&lt;style&gt;{css}&lt;/style&gt;</code>
         </pre>
-    </section>
+</section>
 
 
 
@@ -312,31 +237,23 @@
 
 
 
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
-	<div class="progress"></div>
-	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
+<section class="slide" id="see-more">
+    <h2 class="shout">
+        <img src="pictures/logo.svg" alt="Shower logo">
+        <a href="https://github.com/shower/shower">See more on GitHub</a>
+    </h2>
+    <style>
+        #see-more h2 {
+            font-size:100px
+        }
+        #see-more img {
+            width:0.72em;
+            height:0.72em;
+        }
+    </style>
+</section>
+
+<div class="progress"></div>
+<script src="shower/shower.min.js"></script>
 </body>
 </html>

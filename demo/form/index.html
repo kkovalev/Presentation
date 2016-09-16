@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<form>
+    <fieldset>
+        <input type="text" required placeholder="Фамилия">
+        <input type="text" required placeholder="Имя">
+        <input type="text" required placeholder="Отчество">
+    </fieldset>
+    <fieldset>
+        <input type="email" required placeholder="e-mail">
+        <input type="tel" required placeholder="Телефон" pattern="[0-9]{10,}">
+    </fieldset>
+    <fieldset>
+        <textarea required placeholder="Сообщение"></textarea>
+        <label>
+            <input type="checkbox" required>
+            <span>
+              Согласен с офертой
+            </span>
+        </label>
+    </fieldset>
+    <button>Отправить</button>
+</form>
+
+<style>
+    body {
+        align-items: flex-start;
+    }
+    form > *:not(:first-child){
+        transform: scale(0);
+        transform-origin: 50% 0;
+    }
+    fieldset:valid + *{
+        transform: scale(1);
+    }
+</style>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <title>Slider</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+
+<div id="slider">
+    <div class="item">
+        <input type="radio" name="slide" id="slide1" checked>
+        <label for="slide3" class="prev"></label>
+        <img src="http://greenword.ru/images/2015/10/2015-10-26-18-17-47.jpg">
+        <label for="slide2" class="next"></label>
+    </div>
+    <div class="item">
+        <input type="radio" name="slide" id="slide2">
+        <label for="slide1" class="prev"></label>
+        <img src="http://img.funtema.ru/09102015/kayak/7.jpg">
+        <label for="slide3" class="next"></label>
+    </div>
+    <div class="item">
+        <input type="radio" name="slide" id="slide3">
+        <label for="slide2" class="prev"></label>
+        <img src="http://greenword.ru/images/2015/10/2015-10-26-18-17-07.jpg">
+        <label for="slide1" class="next"></label>
+    </div>
+</div>
+
+
+
+<style>
+    [name=slide]:not(:checked) ~ * {
+        display: none;
+    }
+    input{
+        display: none;
+    }
+    label {
+        display: flex;
+        align-items: center;
+        background: #dadada;
+    }
+    label:first-of-type:after {
+        content: '<';
+        width: 20px;
+        text-align: center;
+    }
+    label:last-of-type:after {
+        content: '>';
+        width: 20px;
+        text-align: center;
+    }
+</style>
+
+<!--
+    https://dizzyzane.github.io/carousel-css/
+-->
+</body>
+</html>
