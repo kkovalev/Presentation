@@ -260,6 +260,48 @@
     </style>
 </section>
 
+<section class="slide" id="filter">
+    <h2>Фильтр</h2>
+    <iframe src="demo/filter" frameborder="0" class="next"></iframe>
+
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>#filter .item{</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>#bestseller<mark>:checked ~ .items > .bestseller</mark>{</code>
+        <code>    display: flex;</code>
+        <code>}</code>
+    </pre>
+
+    <pre class="next" style="z-index: 2">
+        <code>#filter .items:after{</code>
+        <code>    content: 'Ничего нету ):';</code>
+        <code>}</code>
+        <code>#filter <mark>:checked ~ .items:after</mark>{</code>
+        <code>    content: none;</code>
+        <code>}</code>
+    </pre>
+
+    <pre class="next" style="z-index: 3">
+        <code>#bestseller<mark>:checked ~ .items > .bestseller</mark>{</code>
+        <code>    display: flex;</code>
+        <code>    <mark>counter-increment: visibleitems;</mark></code>
+        <code>}</code>
+        <code>#filter .items:after {</code>
+        <code>    content: 'Всего: ' <mark>counter(visibleitems);</mark></code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #filter .html{
+            background: url(pictures/filter-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+
 
 
 
@@ -280,6 +322,16 @@
 
     </style>
 </section>
+
+
+
+
+
+
+
+
+
+
 
 <section class="slide" id="needMore">
     <h2>Мало возможностей чистого CSS</h2>
@@ -324,14 +376,6 @@
             <code>&lt;style&gt;{css}&lt;/style&gt;</code>
         </pre>
 </section>
-
-
-
-
-
-
-
-
 
 <section class="slide" id="see-more">
     <h2 class="shout">
