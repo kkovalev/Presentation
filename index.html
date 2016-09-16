@@ -234,6 +234,31 @@
     </style>
 </section>
 
+<section class="slide" id="stars">
+    <h2>Рейтинг</h2>
+    <iframe src="demo/stars" frameborder="0" class="next"></iframe>
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>.rating input[type=radio]{</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>.rating input[type=radio]<mark>:checked + label ~ label</mark>{</code>
+        <code>    opacity: 0.6;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #stars iframe{
+            transform: scale(2)translateY(30px);
+            z-index: -1;
+            height: 200px;
+        }
+        #stars .html{
+            background: url(pictures/stars-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
 
 
 
@@ -247,8 +272,7 @@
 
 
 
-
-<section class="slide">
+<section class="slide" id="some">
     <h2>2356</h2>
     <iframe src="demo/menu" frameborder="0" class="next"></iframe>
 
