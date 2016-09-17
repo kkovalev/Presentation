@@ -158,6 +158,8 @@ button,
 /* Form */
 form{
     margin-top: 50px;
+    overflow: hidden;
+    position: relative;
 }
 form fieldset{
     border: 1px solid #ccc;

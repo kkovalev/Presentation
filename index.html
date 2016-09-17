@@ -226,7 +226,9 @@
 
     <style>
         #menu iframe{
-            transform: translateY(-100px)scale(2);
+            transform: scale(2);
+            height: 300px;
+            width: 100%;
         }
         #menu .html{
             background: url(pictures/menu-html.png) no-repeat center #fff;
@@ -307,7 +309,27 @@
     </style>
 </section>
 
+<section class="slide" id="steps">
+    <h2>Форма</h2>
+    <iframe src="demo/form" frameborder="0" class="next"></iframe>
 
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>fieldset:not(:first-child){</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>fieldset<mark>:valid + </mark>fieldset{</code>
+        <code>    display: block;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #steps .html{
+            background: url(pictures/form-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
 
 
 
