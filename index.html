@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +28,7 @@
             background-size: 80%;
         }
         .slide pre{
+
             background: #fff;
             position: absolute;
             top: 0;
@@ -43,11 +45,11 @@
 <body class="shower list">
 <header class="caption">
     <h1>Давайте общаться с браузером на родном(для него) языке</h1>
-    <p>Ковалев Кирилл</p>
+    <p>Ковалев Тимофей</p>
 </header>
 <section class="slide" id="cover">
     <h2>CSS POWER</h2>
-    <p><a href="https://habrahabr.ru/users/seokirill/">Ковалев Кирилл</a></p>
+    <p><a href="https://habrahabr.ru/users/seokirill/">Ковалев Тимофей</a></p>
     <img src="pictures/browsers.png" alt="" class="cover">
     <style>
         #cover{
@@ -81,7 +83,7 @@
 
 <section class="slide" id="tooltips">
     <h2>Тултипы</h2>
-    <iframe src="demo/tooltip" frameborder="0" class="next"></iframe>
+    <iframe src="demo/tooltip/index.html" frameborder="0" class="next"></iframe>
 
     <pre class="next">
         <code>&lt;button data-tooltip="Текст с подсказкой"&gt;Кнопка&lt;/button&gt;</code>
@@ -212,7 +214,7 @@
 
 <section class="slide" id="menu">
     <h2>Меню</h2>
-    <iframe src="demo/dropdown-menu" frameborder="0" class="next"></iframe>
+    <iframe src="demo/dropdown-menu/index.html" frameborder="0" class="next"></iframe>
     <div class="html next"></div>
 
     <pre class="next" style="z-index: 1">
@@ -422,11 +424,18 @@
 
 <section class="slide" id="game">
     <h2>Простые игры</h2>
-    <iframe src="demo/duckhunter" frameborder="0" class="next"></iframe>
+    <iframe src="demo/duckhunter/index.html" frameborder="0" class="next"></iframe>
 
-    <style>
+       <div class="html next"></div>
+    <div class="html next html2"></div>
 
-    </style>
+    <pre class="next" style="z-index: 1">
+        <code>&lt;input type="checkbox" id="duck1"&gt;
+</code>
+        <code>    &lt;label for="duck1" class="duck"&gt;&lt;/label&gt;</code>
+        <code></code>
+    </pre>
+
 </section>
 
 
@@ -444,13 +453,28 @@
 
 
 
-<section class="slide" id="some">
-    <h2>2356</h2>
-    <iframe src="demo/menu" frameborder="0" class="next"></iframe>
+<section class="slide" id="multiselect">
+    <h2>Мультиселект</h2>
+    <iframe src="demo/multiselect" frameborder="0" class="next"></iframe>
 
-    <style>
+       <div class="html next"></div>
+    <div class="html next html2"></div>
 
-    </style>
+    <pre class="next" style="z-index: 1">
+<code>#dropdown [data-value]:before{</code>
+  <code>  content: attr(data-value);</code>
+<code>}</code>
+<code>#dropdown input{</code>
+<code>    opacity: 0;</code>
+<code>    position: absolute;</code>
+<code>}</code>
+<code>#dropdown,</code>
+<code>#dropdown .options fieldset{</code>
+<code>    height: var(--item-height);</code>
+<code>}</code>
+        <code></code>
+    </pre>
+
 </section>
 
 
