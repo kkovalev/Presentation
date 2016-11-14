@@ -1,186 +1,552 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+    <style>
+        .slide pre code::before {
+            position: absolute;
+            margin-left: -2em;
+            color: #bdbdbd;
+            counter-increment: code;
+            content: counter(code,decimal-leading-zero) ".";
+        }
+        iframe{
+            width: 100%;
+            height: 440px;
+        }
+        .html{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            background-size: 80%;
+        }
+        .slide pre{
+
+            background: #fff;
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            padding-left: 60px;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body class="shower list">
-	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
-	</header>
-	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
-	</section>
-	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</section>
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
-	</section>
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
-	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</section>
-	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</p>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
-	<div class="progress"></div>
-	<script src="shower/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
+<header class="caption">
+    <h1>Давайте общаться с браузером на родном(для него) языке</h1>
+    <p>Ковалев Тимофей</p>
+</header>
+<section class="slide" id="cover">
+    <h2>CSS POWER</h2>
+    <p><a href="https://habrahabr.ru/users/seokirill/">Ковалев Тимофей</a></p>
+    <img src="pictures/browsers.png" alt="" class="cover">
+    <style>
+        #cover{
+            background: #000;
+        }
+        #cover .cover{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%);
+        }
+        #cover h2 {
+            margin:30px 0 0;
+            color:#FFF;
+            text-align:center;
+            font-size:70px;
+        }
+        #cover p {
+            margin:10px 0 0;
+            text-align:center;
+            color:#FFF;
+            font-style:italic;
+            font-size:20px;
+        }
+        #cover p a {
+            color:#FFF;
+        }
+    </style>
+</section>
+
+<section class="slide" id="tooltips">
+    <h2>Тултипы</h2>
+    <iframe src="demo/tooltip/index.html" frameborder="0" class="next"></iframe>
+
+    <pre class="next">
+        <code>&lt;button data-tooltip="Текст с подсказкой"&gt;Кнопка&lt;/button&gt;</code>
+    </pre>
+
+    <pre class="next">
+        <code>[data-tooltip]{</code>
+        <code>   position: relative;</code>
+        <code>}</code>
+        <code>[data-tooltip]:before{</code>
+        <code>    content: attr(data-tooltip);</code>
+        <code>    position: absolute;</code>
+        <code>    top: -70px;</code>
+        <code>    transform: scale(0);</code>
+        <code>}</code>
+        <code>[data-tooltip]:hover:before{</code>
+        <code>    transform: scale(1);</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #tooltips pre{
+            background: #fff;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            left: 0;
+            flex-wrap: wrap;
+        }
+        #tooltips code{
+            margin-left: 0;
+        }
+    </style>
+</section>
+
+<section class="slide" id="tabsSlide">
+    <h2>Табы</h2>
+
+    <iframe src="demo/tabs" frameborder="0" class="next"></iframe>
+
+    <img src="pictures/tabs-html.png" class="next">
+
+    <pre class="next">
+        <code>input,</code>
+        <code>#tabs .tabcontent > *{</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>#lorem:checked ~ .tabcontent .lorem,</code>
+        <code>#lorem500:checked ~ .tabcontent .lorem500{</code>
+        <code>    display: block;</code>
+        <code>}</code>
+        <code>#lorem500:checked ~ .tabs [for=lorem500],</code>
+        <code>#lorem:checked ~ .tabs [for=lorem]{</code>
+        <code>    background: #dadada;</code>
+        <code>}</code>
+    </pre>
+
+    <div class="html2 html next"></div>
+
+    <pre class="next">
+        <code>.tabcontent > *:not(:first-child){</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>#tabs :target{</code>
+        <code>    display: block;</code>
+        <code>}</code>
+        <code>#tabs <mark>:target</mark>:not(:first-child){</code>
+        <code>    z-index: 2;</code>
+        <code>    position: relative;</code>
+        <code>}</code>
+    </pre>
+
+
+    <style>
+        #tabsSlide img{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        #tabsSlide pre{
+            background: #fff;
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            padding-left: 60px;
+        }
+        #tabsSlide iframe{
+            width: 50%;
+            transform: scale(2);
+            transform-origin: 0 0;
+            height: 200px;
+        }
+        #tabsSlide .html2{
+            background: url(pictures/tabs-html2.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+<section class="slide" id="modal">
+    <h2>Модальные окна</h2>
+    <iframe src="demo/modal" frameborder="0" class="next"></iframe>
+
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>#modal{</code>
+        <code>    z-index: -1;</code>
+        <code>}</code>
+        <code>#modal<mark>:target</mark>{</code>
+        <code>    z-index: 10;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #modal .html{
+            background: url(pictures/modal-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+<section class="slide" id="menu">
+    <h2>Меню</h2>
+    <iframe src="demo/dropdown-menu/index.html" frameborder="0" class="next"></iframe>
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>.dropdown > nav{</code>
+        <code>    transform: scale(0);</code>
+        <code>}</code>
+        <code>.dropdown<mark>:hover</mark> > nav{</code>
+        <code>    transform: scale(1);</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #menu iframe{
+            transform: scale(2);
+            height: 250px;
+            width: 100%;
+            transform-origin: 50% 0;
+        }
+        #menu .html{
+            background: url(pictures/menu-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+<section class="slide" id="stars">
+    <h2>Рейтинг</h2>
+    <iframe src="demo/stars" frameborder="0" class="next"></iframe>
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>.rating input[type=radio]{</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>.rating input[type=radio]<mark>:checked + label ~ label</mark>{</code>
+        <code>    opacity: 0.6;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #stars iframe{
+            transform: scale(2)translateY(30px);
+            z-index: -1;
+            height: 200px;
+        }
+        #stars .html{
+            background: url(pictures/stars-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+<section class="slide" id="filter">
+    <h2>Фильтр</h2>
+    <iframe src="demo/filter" frameborder="0" class="next"></iframe>
+
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>#filter .item{</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>#bestseller<mark>:checked ~ .items > .bestseller</mark>{</code>
+        <code>    display: flex;</code>
+        <code>}</code>
+    </pre>
+
+    <pre class="next" style="z-index: 2">
+        <code>#filter .items:after{</code>
+        <code>    content: 'Ничего нету ):';</code>
+        <code>}</code>
+        <code>#filter <mark>:checked ~ .items:after</mark>{</code>
+        <code>    content: none;</code>
+        <code>}</code>
+    </pre>
+
+    <pre class="next" style="z-index: 3">
+        <code>#bestseller<mark>:checked ~ .items > .bestseller</mark>{</code>
+        <code>    display: flex;</code>
+        <code>    <mark>counter-increment: visibleitems;</mark></code>
+        <code>}</code>
+        <code>#filter .items:after {</code>
+        <code>    content: 'Всего: ' <mark>counter(visibleitems);</mark></code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #filter .html{
+            background: url(pictures/filter-html.png) no-repeat center #fff;
+        }
+        #filter iframe{
+            transform: scale(0.7);
+            height: 900px;
+            transform-origin: 0 0;
+            width: 1300px;
+        }
+    </style>
+</section>
+
+<section class="slide" id="steps">
+    <h2>Форма</h2>
+    <iframe src="demo/form" frameborder="0" class="next"></iframe>
+
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>fieldset:not(:first-child){</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code>fieldset<mark>:valid + </mark>fieldset{</code>
+        <code>    display: block;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #steps .html{
+            background: url(pictures/form-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+<section class="slide" id="tree">
+    <h2>Дерево</h2>
+    <iframe src="demo/tree" frameborder="0" class="next"></iframe>
+
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>[type=checkbox],</code>
+        <code>label > *{</code>
+        <code>    display: none;</code>
+        <code>}</code>
+        <code><mark>:checked ~ label</mark>{</code>
+        <code>    display: block;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #tree iframe{
+            height: 200px;
+            transform: scale(2);
+            transform-origin: 50% 0;
+        }
+        #tree .html{
+            background: url(pictures/tree-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+<section class="slide" id="slider">
+    <h2>Слайдер</h2>
+    <iframe src="demo/slider" frameborder="0" class="next"></iframe>
+
+    <div class="html next"></div>
+
+    <pre class="next" style="z-index:1;">
+        <code>input,</code>
+        <code>#slider [name=slide]<mark>:not(:checked) ~ *</mark> {</code>
+        <code>    display: none;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #slider .html{
+            background: url(pictures/slider-html.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+<section class="slide" id="cube">
+    <h2>Кубики</h2>
+    <iframe src="demo/minecraft" frameborder="0" class="next"></iframe>
+
+    <div class="html next"></div>
+    <div class="html next html2"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>.cube label{</code>
+        <code>    display: none;</code>
+        <code>}</code>
+    </pre>
+
+    <pre class="next" style="z-index: 2">
+        <code><mark>#black:checked ~</mark> .area .cube .black label{</code>
+        <code>    display: block;</code>
+        <code>}</code>
+    </pre>
+
+    <pre class="next" style="z-index: 3">
+        <code>.cube fieldset<mark>.black:valid ~ div</mark>,</code>
+        <code>.cube fieldset.black:hover ~ div{</code>
+        <code>    background: black;</code>
+        <code>}</code>
+    </pre>
+
+    <style>
+        #cube iframe{
+            width: 200%;
+            transform: translateX(-60px);
+        }
+        #cube .html{
+            background: url(pictures/cube-html.png) no-repeat center #fff;
+        }
+        #cube .html2{
+            background: url(pictures/cube-html2.png) no-repeat center #fff;
+        }
+    </style>
+</section>
+
+<section class="slide" id="game">
+    <h2>Простые игры</h2>
+    <iframe src="demo/duckhunter/index.html" frameborder="0" class="next"></iframe>
+
+       <div class="html next"></div>
+    <div class="html next html2"></div>
+
+    <pre class="next" style="z-index: 1">
+        <code>&lt;input type="checkbox" id="duck1"&gt;
+</code>
+        <code>    &lt;label for="duck1" class="duck"&gt;&lt;/label&gt;</code>
+        <code></code>
+    </pre>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="slide" id="multiselect">
+    <h2>Мультиселект</h2>
+    <iframe src="demo/multiselect" frameborder="0" class="next"></iframe>
+
+       <div class="html next"></div>
+    <div class="html next html2"></div>
+
+    <pre class="next" style="z-index: 1">
+<code>#dropdown [data-value]:before{</code>
+  <code>  content: attr(data-value);</code>
+<code>}</code>
+<code>#dropdown input{</code>
+<code>    opacity: 0;</code>
+<code>    position: absolute;</code>
+<code>}</code>
+<code>#dropdown,</code>
+<code>#dropdown .options fieldset{</code>
+<code>    height: var(--item-height);</code>
+<code>}</code>
+        <code></code>
+    </pre>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="slide" id="needMore">
+    <h2>Мало возможностей чистого CSS</h2>
+    <ul class="next">
+        <li>Фильтр по слектам</li>
+    </ul>
+    <pre class="next" style="z-index: 1;">
+            <code>:checked ~ .item{ ... }</code>
+        </pre>
+    <pre class="next">
+            <code>select <span class="wat"></span> .item{ ... }</code>
+        </pre>
+    <ul class="next">
+        <li>Поиск по строке</li>
+    </ul>
+    <pre class="next">
+            <code>input[value="text"] ~ .item{ ... }</code> <span class="next sad">):</span>
+        </pre>
+    <style>
+        #needMore .wat:before{
+            content: '?';
+            transform: scale(2)rotate(10deg);
+            display: inline-block;
+            background: #4b86c2;
+            line-height: 1em;
+            border-radius: 100%;
+            width: 1em;
+            text-align: center;
+            color: #fff;
+        }
+        #needMore .sad{
+            color: #cc0000;
+            transform: scale(3)rotate(-50deg)translate(5px);
+            display: inline-block;
+        }
+    </style>
+</section>
+<section class="slide">
+    <h2>JS в помощь</h2>
+    <pre class="next">
+            <code>var css = `.<mark>${className}</mark>{ display: none }`;</code>
+            <code>&lt;style&gt;{css}&lt;/style&gt;</code>
+        </pre>
+</section>
+
+<section class="slide" id="see-more">
+    <h2>
+        Вопросы?
+    </h2>
+    <style>
+        #see-more h2 {
+            font-size:100px
+        }
+        #see-more img {
+            width:0.72em;
+            height:0.72em;
+        }
+    </style>
+</section>
+
+<div class="progress"></div>
+<script src="shower/shower.min.js"></script>
 </body>
 </html>
